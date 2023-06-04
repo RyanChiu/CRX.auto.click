@@ -1,0 +1,12 @@
+<html>
+	<script>
+		function logTime(from) {
+			var now = new Date();
+			console.log(from + "->" + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds());
+		}
+	</script>
+	<body>
+		<button id="btn1" value="1" onclick="logTime(1);">1</button>
+		<button id="btn2" class="btn-img" value="2" onclick="logTime(2);">2</button>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "auto.click",
+    "version": "0.1",
+    "background": {"service_worker": "background.js"},
+    //"background": {"page": "background.html"},
+    "permissions": 
+    [
+	    "tabs", 
+	    //"http://*/*", 
+	    //"https://*/*",
+       	"alarms",
+	    "notifications"
+    ],
+    "action": {
+        "default_title": "click on time",
+        "default_icon": {
+            "16": "./images/eye-icon.png",
+            "32": "./images/eye-icon.png"
+        }
+    },
+    "content_scripts":
+    [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["jQuery/jquery-3.7.0.min.js", "moment.js", "autoclick.js"],
+            "run_at": "document_start"
+        }
+    ]
+}
